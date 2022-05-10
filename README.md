@@ -6,5 +6,5 @@
 
 - Create a mini quiz about mythological beings, something close to 10-15 questions with differents levels of difficulty;
 - The user will be able to login as a player or as an admin, each one has its own activities;
-- There will also have a ranking to track how good the players know, creating a competition of some kind.
+- There will also have a ranking to track how good the players are going, creating a competition of some kind.
 

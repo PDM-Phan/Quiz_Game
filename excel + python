@@ -1,0 +1,30 @@
+usando o popenpyxl. obs: prefiro o pandas
+
+import openpyxl
+
+book = openpyxl.Workbook()
+print(book.sheetnames)
+
+book.create_sheet('Quiz')
+book.create_sheet('Admin')
+book.create_sheet('Cadastro')
+book.create_sheet('Ranking')
+
+quiz_page = book['Quiz']
+quiz_page.append(['número', 'perguntas', 'alternativas'])
+quiz_page.append(['1', 'Seres mitológicos que são uma espécie de fera e possuíam o corpo composto por partes de dois animais:', 'A:Quimeras/B:Tritões/C:Sereias'])
+quiz_page.append(['2', 'Era representado com cabeça e tronco humano com rabo de peixe. Usava um tridente e habitava as profundezas do mar:', 'A:Quimeras/B:Tritões/C:Sereias'])
+quiz_page.append(['3', 'Imortais, belas e sempre ligadas à natureza, eram divindades menores, nem tão poderosas quanto os deuses olímpicos, mas muito superiores aos mortais: ', 'A:Quimeras/B:Ninfas/C:Sereias'])
+quiz_page.append(['4', 'Gigantes de força descomunal e com um só olho no meio da testa:', 'A:Quimeras/B:Ninfas/C:Ciclopes'])
+quiz_page.append(['5', 'Uma bela mulher com rabo de peixe:', 'A:Sereias/B:Ninfas/C:Ciclopes'])
+
+admin_page = book['Admin']
+admin_page.append(['Usuário', 'Senha'])
+
+cadastro_page = book['Cadastro']
+cadastro_page.append(['Usuário', 'Senha'])
+
+ranking_page = book['Ranking']
+ranking_page.append(['Ranking', 'Nome'])
+
+book.save('Banco de dados.xlsx')

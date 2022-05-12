@@ -35,9 +35,7 @@ def JanelaAdm():
         [sg.Text()],
         [sg.Text('Login: '), sg.Input(key = 'loginadm')],
         [sg.Text('Senha'), sg.Input(key = 'senhaadm', password_char= '*')],
-        [sg.Button('Entrar')],
-        [sg.Text()],
-        [sg.Button('Cadastrar novo usuário')]
+        [sg.Button('Entrar')]
         ]
     return sg.Window('ADMINISTRADOR(A)', layout = layoutadm, finalize=True)
 
@@ -50,7 +48,7 @@ def JanelaCad():
         [sg.Text('Crie um login: '), sg.Input(key = 'novologin')],
         [sg.Text('Crie uma senha:'), sg.Input(key = 'novasenha', password_char= '*')],
         [sg.Text()],
-        [sg.Checkbox('Cadastrar como usuário', key = 'usuario'), sg.Checkbox('Cadastrar como administrador', key = 'adm')],
+        [sg.Checkbox('Cadastrar como usuário', key = 'usuario')],
         [sg.Button('Cadastrar')]
         ]
     return sg.Window('CADASTRO', layout = layoutcad, finalize=True)
@@ -64,7 +62,8 @@ def JanelaPerg():
         [sg.Text('\n')],
         [sg.Text('Qual a alternativa correta?')],
         [sg.Button('A'),sg.Button('B'),sg.Button('C'),sg.Button('D'),sg.Button('E')],
-        [sg.Button('Próxima pergunta')]
+        [sg.Button('Próxima pergunta')],
+        [sg.Button('Finalizar')]
     ]
     return sg.Window('PERGUNTAS', layout=layoutperg, finalize=True)
 
@@ -96,6 +95,8 @@ while True:
         break
     if window == janela5 and evento == sg.WIN_CLOSED:
         break
+    if window == janela6 and evento == sg.WIN_CLOSED:
+        break
 
     #proxima janela
     if window == janela1 and evento == 'Logar como Usuário':
@@ -120,4 +121,9 @@ while True:
 
     if window == janela3 and evento == 'Entrar':
         janela5 = JanelaPerg()
-        janela3.hide()
+        janela2.hide()
+
+    if window == janela5 and evento == 'Finalizar':
+        janela6 = JanelaRanking()
+        janela5.hide()
+

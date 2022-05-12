@@ -58,7 +58,7 @@ def JanelaCad():
 def JanelaPerg():
     sg.theme('DarkGreen5')
     layoutperg = [
-        [sg.Text('Score = #X')],
+        [sg.Text ('Usuário: #login do usuario'), sg.Text('Score = #X')],
         [sg.Text('Pergunta: ', '#pergunta#')],
         [sg.Text('Alternativas:')],
         [sg.Text('\n')],
@@ -68,10 +68,18 @@ def JanelaPerg():
     ]
     return sg.Window('PERGUNTAS', layout=layoutperg, finalize=True)
 
+def JanelaRanking():
+    sg.theme('DarkGreen5')
+    layoutranking = [
+        [sg.Text('CLASSIFICAÇÃO DAS MELHORES PONTUAÇÕES')],
+        [sg.Text('Ranking:')],
+        [sg.Text('#ranking... 1º 2º 3º... 10º')]
+    ]
+    return sg.Window('RANKING', layout = layoutranking, finalize=True)
 
 #JANELAS
 
-janela1, janela2, janela3, janela4, janela5 = JanelaIntrod(), None, None, None, None
+janela1, janela2, janela3, janela4, janela5, janela6 = JanelaIntrod(), None, None, None, None, None
 
 #EVENTOS
 

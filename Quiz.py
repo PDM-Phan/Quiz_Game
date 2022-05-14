@@ -76,6 +76,7 @@ while len(Perguntas_Disponiveis) != linhas:
             Ranking_Functions.alterando_ranking(ranking, jogador_admin)
             # salva esse novo ranking na planilha
             Ranking_Functions.alterando_ranking_planilha(sheet_rankings, ranking, quiz_book)
+            Ranking_Functions.printando_ranking(ranking)
             sleep(1)
             print('QUIZ FINALIZADO.')
             break

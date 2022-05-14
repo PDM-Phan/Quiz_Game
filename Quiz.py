@@ -3,10 +3,44 @@ from random import randint
 from time import sleep
 from Functions import mostrar_pergunta_respostas, verificar_resposta, caucular_rank
 from Functions import Menu_Quiz
+def cadastro():
+      #cadastro de usuarios 
+    usuario = []
+    #coleta de dados
+    while True:
+        nome_valido = 0
+        #coleta nomes
+        nome = input('\nCadastro de usuario: ').capitalize().strip()
+        for n in sheet_cadastro['A']:
+            if nome == n.value:
+                print('usuario já registrado!')
+                nome_valido += 1
+                break
+        if nome_valido > 0 or len(nome) < 3:
+            continue
+        else:
+            usuario.append(nome)
+            while True:
+                #coleta de senhas
+                senha = input('\nCadastro de senha: ').strip()
+                if len(senha) < 6:
+                    print('A senha deve conter no minimo 6 caracteres ')
+                    continue
+                else:
+                    usuario.append(senha)
+                    break
+        break
+    return usuario
+
+
+def registro(sheet, usuario, book):
+    sheet.append(usuario)
+    book.save('C:\\Users\\asss1\\OneDrive\\Área de Trabalho\\Projeto do jogo\\Quiz_Game\\Pasta1.xlsx')
 
 # Main Program
-quiz_book = op.load_workbook('Pasta1.xlsx')
+quiz_book = op.load_workbook('C:\\Users\\asss1\\OneDrive\\Área de Trabalho\\Projeto do jogo\\Quiz_Game\\Pasta1.xlsx')
 sheet_quiz = quiz_book['Quiz']
+sheet_cadastro = quiz_book['Cadastro']
 
 # Debug linhas perguntas
 # linhas_totais = sheet_quiz.max_row
@@ -14,7 +48,14 @@ sheet_quiz = quiz_book['Quiz']
 
 # Apresentando o quiz
 Menu_Quiz.Menu("QUIZ DIVINO")
-# Determina o maximo de perguntas que existe na planilha
+
+usuario = cadastro()
+registro(sheet_cadastro, usuario, quiz_book)
+    
+
+
+
+""" # Determina o maximo de perguntas que existe na planilha
 linhas = sheet_quiz.max_row - 1
 Perguntas_Disponiveis = []
 pontos = perguntas_respondidas = 0
@@ -66,4 +107,4 @@ while len(Perguntas_Disponiveis) != linhas:
     else:
         print('Criando uma nova pergunta...')
         sleep(1)
-
+ """

@@ -28,20 +28,16 @@ def mostrar_pergunta_respostas(sheet, limite_perg):
 def verificar_resposta(sheet, num_perg, rep):
     # verifica a resposta do usuario com a resposta correta
     resposta_correta = sheet.cell(row=num_perg + 1, column=4)
+    # Determinando a dificuldade da pergunta, sendo ela dificil(2) ou facil(1)
+    dificuldade = 0
     if 2 <= (num_perg + 1) <= 14:
         # Pergunta dificil
-        p = 2
+        dificuldade += 2
     elif 14 < (num_perg + 1) <= 25:
         # Pergunta facil
-        p = 1
+        dificuldade += 1
 
-    return p if resposta_correta.value == rep else 0
-
-
-def caucular_rank(resposta_certas, perguntas_respondidas):
-    # Caucula o rank baseado nas perguntas respondidas com as perguntas acertadas
-    rank = (resposta_certas * 100) / perguntas_respondidas
-    return round(rank)
+    return dificuldade if resposta_correta.value == rep else 0
 
 
 def cadastro(sheet):

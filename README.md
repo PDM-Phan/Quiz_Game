@@ -1,6 +1,6 @@
 # Quiz_Game
 
-> ### This is a quiz game made for a college project about mythological beings, the game have now its main functions, that means that its now playable, but its nome fully completed.
+> ### This is a quiz game made for a college project about mythological beings, the game have now its main functions, that means that its now playable, but its not fully completed.
 
 ## What we hope to create with this project:
 

@@ -40,7 +40,19 @@ def alterando_ranking_planilha(sheet, lista_rank, book):
         # serve para pegar as celulas de cada coluna
         for c in range(0, 3):
             # troca esse valores por novos
-            cell = sheet.cell(row=r, column=c+1)
-            cell.value = lista_rank[r-2][c]
+            cell = sheet.cell(row=r, column=c + 1)
+            cell.value = lista_rank[r - 2][c]
     # após isso salva
     book.save('C:\\Users\\orian\\PycharmProjects\\QuizGame2.0\\Pasta1.xlsx')
+
+
+def printando_ranking(rank):
+    print(F'{"RANKING":>7} - {"NOME":^10} - {"PONTOS":^5}')
+    cont = 1
+    for r in rank:
+        if cont != 10:
+            print(f'{r[0]:>7} - {r[1]:^10} - {r[2]:^5}')
+            cont += 1
+
+        else:
+            break

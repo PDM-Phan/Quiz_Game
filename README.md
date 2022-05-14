@@ -11,4 +11,4 @@
 ### OBS:
 
 - Before playing in your pc, change the path to this directory inside the code, or else the programn wont work as it should be.
-- The files that require changes are: Ranking_Functions.py and __init__.py, at the bottom of each file
+- The files that require changes are: **Ranking_Functions.py** and **__init__.py**, at the bottom of each file

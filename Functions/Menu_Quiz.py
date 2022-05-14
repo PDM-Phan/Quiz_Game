@@ -1,5 +1,6 @@
 from Functions import cadastro, registro
 
+
 def Menu(str, usuario):
     amarelo_negrito = "\033[1;33m"
     ciano_negrito = "\033[1;36m"
@@ -7,7 +8,7 @@ def Menu(str, usuario):
     s = '-=' * 60
     # Printa um menu personalizado no terminal
     print(f'{amarelo_negrito}{s}{fim}')
-    print(f'{amarelo_negrito}{f"!!BEM - VINDO {usuario}!!":^100}{fim}')
+    print(f'{amarelo_negrito}{f"!!BEM - VINDO {usuario.upper()}!!":^100}{fim}')
     print(f'{amarelo_negrito}{"À...":^100}{fim}')
     print(f'{ciano_negrito}{str:^100}{fim}')
     print(f'{amarelo_negrito}{s}{fim}')

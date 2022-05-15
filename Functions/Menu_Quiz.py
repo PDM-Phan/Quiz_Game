@@ -50,7 +50,7 @@ def Janela_principal(book, sheet_cadastro, sheet_admin):
                 forma_entrada = int(input('1 - JÀ CADASTRADO\n'
                                           '2 - NÃO CADASTRADO\n'
                                           '>> '))
-                if 12 > forma_entrada > 2:
+                if 1 > forma_entrada > 2:
                     # Caso seja uma opção não válida
                     print('[ERRO] Digite uma opção válida.')
                     continue
